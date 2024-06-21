@@ -1,0 +1,47 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+/.firebase
+
+# firebase
+/.firebase
+.firebaserc
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+
+# local env files
+.env*.local
+.env*
+
+# tools
+.tools
+
+# Configuration files
+.eslintrc.json
+firebase.json
+jsconfig.json
+next.config.mjs
+
+# Dependency directories
+package-lock.json
+
+# Public assets
+public/fonts*

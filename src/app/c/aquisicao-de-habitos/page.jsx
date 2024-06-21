@@ -1,0 +1,71 @@
+import { courses } from '@/config/courses';
+
+import HeaderCourses from '@/components/HeaderCourses';
+import Footer from '@/components/Footer';
+import SectionCallToAction from '@/components/SectionCallToAction';
+import SectionTextHighlight from '@/components/SectionTextHighlight';
+import SectionIconList from '@/components/SectionIconList';
+import SectionFaq from '@/components/SectionFaq';
+
+import { faq } from '@/config/siteInfo';
+
+export async function generateMetadata({  }) {
+
+  return {
+    title: "Aquisição de Hábitos | HabilidadesCognitivas.com",
+    description: "Neurociências e psicologia aplicadas à aquisição de hábitos",
+  };
+}
+
+const CoursePage = () => {
+ 
+  const course = courses.find(course => course.url === "aquisicao-de-habitos");
+
+  return (
+    <>    
+      <HeaderCourses 
+        title={course.title} 
+        description={course.description} 
+        type={course.type}
+      />
+
+      <SectionIconList 
+        title="Ao final do curso você vai:"
+        items={course.outcomes} 
+        responsive={true}
+      />
+
+      <SectionTextHighlight 
+        className="custom-bg-color-dark-blue custom-color-light-blue py-5"            
+        text={course.highLights[0]} 
+      />
+
+      <SectionIconList             
+        title="Para quem é este curso?"
+        items={course.targetAudience} 
+        responsive={true}
+      />
+
+      <SectionTextHighlight 
+        className="custom-bg-color-dark-blue custom-color-light-blue py-5"            
+        text={course.highLights[1]} 
+      />        
+
+      <SectionFaq 
+        questions={faq} 
+        className="mb-4" 
+      />
+
+      <SectionCallToAction 
+        cta={course.cta} 
+        price={course.web3.bnbPrice*2}
+        salesPrice={course.web3.bnbPrice}
+        checktouLink={'/finalizar-inscricao?id='+course.web3.id}
+      />
+
+      <Footer />
+    </>
+  );
+};
+
+export default CoursePage;
