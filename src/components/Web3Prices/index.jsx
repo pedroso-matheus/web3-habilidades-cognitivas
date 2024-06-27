@@ -1,7 +1,10 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import { cryptoToCurrency } from "@/services/coingeckoServices";
+
+import { cryptoToCurrency } from "../../services/coingeckoServices";
 
 const Web3Prices = ({ bnbPrice }) => {
   const [brlPrice, setBrlPrice] = useState(null);

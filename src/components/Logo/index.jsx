@@ -1,6 +1,6 @@
 
 import Image from "next/legacy/image";
-import { siteTitle } from "@/config/siteInfo";
+import { siteTitle } from "../../config/siteInfo";
 
 const Logo = ({ width, height, className }) => {
 

@@ -2,7 +2,7 @@ import Line from "../Line";
 import Grafism from "../Grafism";
 import Logo from "../Logo";
 
-import {  siteTitle, headline, subHeadline } from "@/config/siteInfo";
+import {  siteTitle, headline, subHeadline } from "../../config/siteInfo";
 
 const HeaderHome = () => {
 

@@ -1,7 +1,7 @@
-import Container from "@/components/Container";
-import Logo from "@/components/Logo";
-import FbCheckout from '@/analytics/FacebookCheckout';
-import Web3CheckoutPage from "@/components/Web3CheckoutPage";
+import Container from "../../components/Container";
+import Logo from "../../components/Logo";
+import FbCheckout from '../../analytics/FacebookCheckout';
+import Web3CheckoutPage from "../../components/Web3CheckoutPage";
 
 export async function generateMetadata() {
   return {

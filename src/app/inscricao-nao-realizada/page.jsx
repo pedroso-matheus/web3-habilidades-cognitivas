@@ -1,11 +1,11 @@
-import Container from "@/components/Container";
-import Logo from "@/components/Logo";
-import WhatsAppLink from "@/components/WhatsappLink";
-import ButtonLink from "@/components/ButtonLink";
+import Container from "../../components/Container";
+import Logo from "../../components/Logo";
+import WhatsAppLink from "../../components/WhatsappLink";
+import ButtonLink from "../../components/ButtonLink";
 
 export async function generateMetadata() {
   return {
-    title: "Inscrição Realizada",
+    title: "Inscrição não realizada",
   };
 }
 

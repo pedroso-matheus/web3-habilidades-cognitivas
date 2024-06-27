@@ -1,12 +1,12 @@
-import HeaderCourses from '@/components/HeaderCourses';
-import Footer from '@/components/Footer';
-import SectionCallToAction from '@/components/SectionCallToAction';
-import SectionTextHighlight from '@/components/SectionTextHighlight';
-import SectionIconList from '@/components/SectionIconList';
-import SectionFaq from '@/components/SectionFaq';
+import HeaderCourses from '../../../components/HeaderCourses';
+import Footer from '../../../components/Footer';
+import SectionCallToAction from '../../../components/SectionCallToAction';
+import SectionTextHighlight from '../../../components/SectionTextHighlight';
+import SectionIconList from '../../../components/SectionIconList';
+import SectionFaq from '../../../components/SectionFaq';
 
-import { faq } from '@/config/siteInfo';
-import { courses } from '@/config/courses';
+import { faq } from '../../../config/siteInfo';
+import { courses } from '../../../config/courses';
 
 export async function generateMetadata({  }) {
 
@@ -59,7 +59,7 @@ const CoursePage = () => {
         cta={course.cta} 
         price={course.web3.bnbPrice*2}
         salesPrice={course.web3.bnbPrice}
-        checktouLink={'/finalizar-inscricao?id='+course.web3.id}
+        checktouLink={'/finalizar-inscricao/'+course.url}
       />
 
       <Footer />

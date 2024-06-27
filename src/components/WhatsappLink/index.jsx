@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { whatsapp } from '@/config/siteInfo';
+import { whatsapp } from '../../config/siteInfo';
 
 const WhatsAppLink = ({ label, message }) => {
 

@@ -1,8 +1,7 @@
 import Container from "../Container";
-import Grafism from "../Grafism";
 import Logo from "../Logo";
 
-import { email, companyName } from "@/config/siteInfo";
+import { email, companyName } from "../../config/siteInfo";
 
 const Footer = () => {
     const year = new Date().getFullYear();

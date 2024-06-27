@@ -18,7 +18,7 @@ export async function createOrUpdateUser(fullName, email, mobile, classroomIds, 
   };
 
   try {
-    const response = await fetch('/api/v1/users?api_key='+apiKey, {
+    const response = await fetch('https://memberkit.com.br/api/v1/users?api_key='+apiKey, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export async function getClassrooms() {
     }
   
     try {
-      const response = await fetch('/api/v1/classrooms?api_key='+apiKey, {
+      const response = await fetch('https://memberkit.com.br/api/v1/classrooms?api_key='+apiKey, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ export async function getClassrooms() {
   
     try {
       console.log('Fetching users with API key:', apiKey);
-      const response = await fetch('/api/v1/users?api_key=' + apiKey, {
+      const response = await fetch('https://memberkit.com.br/api/v1/users?api_key=' + apiKey, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ export async function getClassrooms() {
     }
   
     try {
-      const response = await fetch('/api/v1/users/'+id+'?api_key='+apiKey, {
+      const response = await fetch('https://memberkit.com.br/api/v1/users/'+id+'?api_key='+apiKey, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -126,7 +126,7 @@ export async function getClassrooms() {
   
     try {
       console.log('Fetching course with ID:', id, 'and API key:', apiKey);
-      const response = await fetch('/api/v1/courses/'+id+'?api_key='+apiKey, {
+      const response = await fetch('https://memberkit.com.br/api/v1/courses/'+id+'?api_key='+apiKey, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -154,7 +154,7 @@ export async function getClassrooms() {
   
     try {
       console.log('Fetching memberships with API key:', apiKey);
-      const response = await fetch(`/api/v1/memberships?api_key=${apiKey}`, {
+      const response = await fetch('https://memberkit.com.br/api/v1/memberships?api_key'+apiKey, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

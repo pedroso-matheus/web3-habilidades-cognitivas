@@ -1,6 +1,6 @@
-import Container from "@/components/Container";
-import Logo from "@/components/Logo";
-import WhatsAppLink from "@/components/WhatsappLink";
+import Container from "../../components/Container";
+import Logo from "../../components/Logo";
+import WhatsAppLink from "../../components/WhatsappLink";
 
 export async function generateMetadata() {
   return {

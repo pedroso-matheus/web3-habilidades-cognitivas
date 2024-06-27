@@ -12,9 +12,8 @@ import Web3ButtonMetamask from "../Web3ButtonMetamask";
 import ButtonPurchase from "../ButtonPurchase"; 
 import ButtonLink from "../ButtonLink";
 
-import { buyCourse } from "@/services/web3Services";
-import { courses } from "@/config/courses";
-import { createOrUpdateUser } from "@/services/memberkitServices";
+import { buyCourse } from "../../services/web3Services";
+import { courses } from "../../config/courses";
 
 const Web3CheckoutPage = () => {
   const searchParams = useSearchParams();
@@ -42,37 +41,39 @@ const Web3CheckoutPage = () => {
 
   const price = course?.web3?.bnbPrice;
 
-  const handleBuyCourse = () => {
+  const handleBuyCourse = async () => {
     if (!isFormValid) {
       return;
     }
 
     setLoading(true);
-    buyCourse(course.web3.id, email, price.toString())
-      .then(response => {
-        if (response && response.transactionHash) {
-          const expiresAt = new Date();
-          expiresAt.setFullYear(expiresAt.getFullYear() + 1);
-          return createOrUpdateUser(fullName, email, mobile, course.memberkit.classroomIds, expiresAt.toISOString());
-        } else {
-          console.error("A transação não foi bem-sucedida:", response);
-          throw new Error("A transação não foi bem-sucedida");
-        }
-      })
-      .then(memberkitResponse => {
-        if (memberkitResponse) {
-          console.log("MemberKit user created/updated:", memberkitResponse);
-          router.push("/inscricao-realizada");
-        } else {
-          console.error("Erro ao criar/atualizar usuário no MemberKit");
-          throw new Error("Erro ao criar/atualizar usuário no MemberKit");
-        }
-      })
-      .catch(error => {
-        console.error("Erro ao comprar o curso:", error);
-        router.push("/inscricao-nao-realizada");
-      })
-      .finally(() => setLoading(false));
+    try {
+      const response = await buyCourse(course.web3.id, email, price.toString());
+      if (response && response.transactionHash) {
+        const expiresAt = new Date();
+        expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+
+        // Redireciona para a página de sucesso com os dados do usuário e do curso
+        router.push({
+          pathname: '/inscricao-realizada',
+          query: {
+            fullName,
+            email,
+            mobile,
+            classroomIds: course.memberkit.classroomIds.join(','), // Convertendo array para string
+            expiresAt: expiresAt.toISOString(),
+          }
+        });
+      } else {
+        console.error("A transação não foi bem-sucedida:", response);
+        throw new Error("A transação não foi bem-sucedida");
+      }
+    } catch (error) {
+      console.error("Erro ao comprar o curso:", error);
+      // router.push("/inscricao-nao-realizada");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (isLoadingCourse) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { doLogin } from "@/services/web3Services";
+import { doLogin } from "../../services/web3Services";
 
 const ButtonMetamask = ({ setConnected, className }) => {
   const connectWallet = () => {

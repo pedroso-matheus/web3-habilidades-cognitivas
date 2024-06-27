@@ -1,6 +1,6 @@
-import Container from "@/components/Container";
+import Container from "../../components/Container";
 
-import { companyName, gatawayPagamento, dataAtualizacao, linkSite, email, linkTermos } from "@/config/siteInfo"
+import { companyName, gatawayPagamento, dataAtualizacao, linkSite, email, linkTermos } from "../../config/siteInfo"
 
 export async function generateMetadata() {
   return {

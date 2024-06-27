@@ -1,9 +1,9 @@
-import SectionCoursesGrid from "@/components/SectionCoursesGrid";
-import Footer from "@/components/Footer";
-import HeaderHome from "@/components/HeaderHome";
-import SectionTextHighlight from "@/components/SectionTextHighlight";
+import SectionCoursesGrid from "../components/SectionCoursesGrid";
+import Footer from "../components/Footer";
+import HeaderHome from "../components/HeaderHome";
+import SectionTextHighlight from "../components/SectionTextHighlight";
 
-import { courses } from "@/config/courses";
+import { courses } from "../config/courses";
 
 export default function Home() {
 

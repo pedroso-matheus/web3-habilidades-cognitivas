@@ -34,7 +34,7 @@ export async function getCoursePrice(id) {
     }
 }
 
-export async function buyCourse(courseId, email, coursePriceInEther) {
+export async function web3BuyCourse(courseId, email, coursePriceInEther) {
     try {
         const contract = getContract();
         const from = localStorage.getItem("wallet");
